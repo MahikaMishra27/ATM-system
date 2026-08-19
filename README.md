@@ -4,7 +4,8 @@ So, here is an ATM system-
 A web-based ATM Management System built using **Python, Flask, HTML, CSS, and SQLite**. This project simulates the basic functionality of a real ATM, including user registration, secure PIN authentication, balance management, deposits, withdrawals, money transfers, transaction history, and PIN management.
 This project simulates the basic functionality of a real ATM, providing users with a secure and simple interface to manage their bank accounts and perform common banking transactions.
 
-✨ Features
+✨ Features-
+
 👤 User Registration — Create a new ATM account.
 
 🔐 Secure PIN Authentication — Log in using an account number and PIN.
@@ -25,7 +26,8 @@ This project simulates the basic functionality of a real ATM, providing users wi
 
 🗄️ SQLite Database — Store account and transaction information.
 
-🛠️ Technologies Used
+
+🛠️ Technologies Used-
 Python-	Backend programming
 
 Flask-	Web framework
