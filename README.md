@@ -6,20 +6,34 @@ This project simulates the basic functionality of a real ATM, providing users wi
 
 ✨ Features
 👤 User Registration — Create a new ATM account.
+
 🔐 Secure PIN Authentication — Log in using an account number and PIN.
+
 💰 Balance Management — Check the current account balance.
+
 💵 Deposit Money — Add funds to an account.
+
 🏧 Withdraw Money — Withdraw funds while checking the available balance.
+
 🔄 Money Transfer — Transfer money between accounts.
+
 📜 Transaction History — View previous deposits, withdrawals, and transfers.
+
 🔑 PIN Management — Change the account PIN.
+
 🚪 Secure Logout — End the current session safely.
+
 🗄️ SQLite Database — Store account and transaction information.
 
 🛠️ Technologies Used
 Python-	Backend programming
+
 Flask-	Web framework
+
 HTML-	Web page structure
+
 CSS-	User interface and styling
+
 SQLite-	Database management
+
 Jinja2-	Dynamic HTML templates
