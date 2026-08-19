@@ -40,3 +40,5 @@ CSS-	User interface and styling
 SQLite-	Database management
 
 Jinja2-	Dynamic HTML templates
+
+Also why do I love the color blue so much ?!?!
