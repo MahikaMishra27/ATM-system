@@ -28,6 +28,7 @@ This project simulates the basic functionality of a real ATM, providing users wi
 
 
 🛠️ Technologies Used-
+
 Python-	Backend programming
 
 Flask-	Web framework
