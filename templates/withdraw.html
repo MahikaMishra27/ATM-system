@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Withdraw Money</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="atm-container">
+
+        <div class="dashboard-card">
+
+            <h1>Withdraw Money</h1>
+
+            <p>
+                Available Balance:
+                <strong>
+                    ₹{{ "%.2f"|format(account.balance) }}
+                </strong>
+            </p>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+
+    {% if messages %}
+
+        {% for category, message in messages %}
+
+            <p class="{{ category }}">
+                {{ message }}
+            </p>
+
+        {% endfor %}
+
+    {% endif %}
+
+{% endwith %}
+
+
+
+            <form method="POST">
+
+                <label for="amount">
+                    Enter Amount
+                </label>
+
+                <input
+                    type="number"
+                    id="amount"
+                    name="amount"
+                    min="1"
+                    step="0.01"
+                    placeholder="Enter amount"
+                    required
+                >
+
+                <button
+                    type="submit"
+                    class="atm-button"
+                >
+                    Withdraw
+                </button>
+
+            </form>
+
+
+            <br>
+
+            <a
+                href="{{ url_for('dashboard') }}"
+                class="atm-button"
+            >
+                Cancel
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

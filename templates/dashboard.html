@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ATM Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="atm-container">
+
+        <div class="dashboard-card">
+
+            <h1>ATM Dashboard</h1>
+
+            <h2>
+                Welcome, {{ user.name }}
+            </h2>
+
+
+            <p>
+                Account Number:
+                <strong>
+                    {{ user.accounts[0].account_number }}
+                </strong>
+            </p>
+
+
+            <div class="atm-menu">
+
+                <!-- Balance -->
+
+                <a
+                    href="{{ url_for('balance') }}"
+                    class="atm-button"
+                >
+                    💰 Balance Inquiry
+                </a>
+
+
+                <!-- Withdraw -->
+
+                <a
+                    href="{{ url_for('withdraw') }}"
+                    class="atm-button"
+                >
+                    💸 Withdraw
+                </a>
+
+
+                <!-- Deposit -->
+
+                <a
+                    href="{{ url_for('deposit') }}"
+                    class="atm-button"
+                >
+                    💵 Deposit
+                </a>
+
+
+                <!-- Transfer -->
+
+                <a
+                    href="{{ url_for('transfer') }}"
+                    class="atm-button"
+                >
+                    🔄 Transfer
+                </a>
+
+
+                <!-- Transaction History -->
+
+                <a
+                    href="{{ url_for('transactions') }}"
+                    class="atm-button"
+                >
+                    📜 Transaction History
+                </a>
+
+
+                <!-- Change PIN -->
+
+                <a
+                    href="{{ url_for('change_pin') }}"
+                    class="atm-button"
+                >
+                    🔐 Change PIN
+                </a>
+
+
+                <!-- Logout -->
+
+                <a
+                    href="{{ url_for('logout') }}"
+                    class="atm-button logout-button"
+                >
+                    🚪 Logout
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

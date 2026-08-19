@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Transaction History</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="atm-container">
+
+        <div class="dashboard-card">
+
+            <h1>Transaction History</h1>
+
+            <p>
+                Account:
+                <strong>
+                    {{ account.account_number }}
+                </strong>
+            </p>
+
+
+            {% if transactions %}
+
+                <div class="transaction-list">
+
+                    {% for transaction in transactions %}
+
+                        <div class="transaction-card">
+
+                            <div>
+
+                                <h3>
+                                    {{ transaction.type }}
+                                </h3>
+
+                                <p>
+                                    {{ transaction.description }}
+                                </p>
+
+                                <small>
+                                    {{ transaction.created_at }}
+                                </small>
+
+                            </div>
+
+
+                            <div>
+
+                                {% if transaction.type == "DEPOSIT" %}
+
+                                    <strong class="deposit">
+                                        +₹{{ "%.2f"|format(transaction.amount) }}
+                                    </strong>
+
+                                {% elif transaction.type == "WITHDRAWAL" %}
+
+                                    <strong class="withdrawal">
+                                        -₹{{ "%.2f"|format(transaction.amount) }}
+                                    </strong>
+
+                                {% else %}
+
+                                    <strong>
+                                        ₹{{ "%.2f"|format(transaction.amount) }}
+                                    </strong>
+
+                                {% endif %}
+
+                            </div>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+                <p>
+                    No transactions found.
+                </p>
+
+            {% endif %}
+
+
+            <br>
+
+            <a
+                href="{{ url_for('dashboard') }}"
+                class="atm-button"
+            >
+                Back to Dashboard
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

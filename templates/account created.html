@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Account Created</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="atm-container">
+
+        <div class="dashboard-card">
+
+            <h1>🎉 Account Created!</h1>
+
+            <p>
+                Welcome,
+                <strong>{{ user.name }}</strong>
+            </p>
+
+            <hr>
+
+            <h2>Your Account Details</h2>
+
+            <p>
+                <strong>Account Number</strong>
+            </p>
+
+            <p>
+                {{ account.account_number }}
+            </p>
+
+
+            <p>
+                <strong>Card Number</strong>
+            </p>
+
+            <p>
+                {{ card.card_number }}
+            </p>
+
+
+            <p>
+                <strong>Starting Balance</strong>
+            </p>
+
+            <p>
+                ₹{{ "%.2f"|format(account.balance) }}
+            </p>
+
+            <hr>
+
+            <p>
+                Please save your card number.
+                You will need it to log in.
+            </p>
+
+
+            <a
+                href="{{ url_for('login') }}"
+                class="atm-button"
+            >
+                Go to Login
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
